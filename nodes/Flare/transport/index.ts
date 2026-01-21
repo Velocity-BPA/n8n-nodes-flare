@@ -1,0 +1,125 @@
+/**
+ * Flare Transport Layer Index
+ * Central export for all transport/client modules
+ */
+
+// Provider exports (primary RPC interface)
+export {
+	createFlareConnection,
+	getFlareCredentials,
+	getContract,
+	getWNatContract,
+	getFtsoRegistryContract,
+	getFtsoRewardManagerContract,
+	getStateConnectorContract,
+	getClaimSetupManagerContract,
+	getSignerAddress,
+	waitForTransaction,
+	estimateGas,
+	getGasPrice,
+	getBaseFee,
+	sendTransaction,
+	sendNativeTokens,
+	getNativeBalance,
+	getBlockNumber,
+	getBlock,
+	getTransaction,
+	getTransactionReceipt,
+	isValidAddress,
+	normalizeAddress,
+	type FlareConnection,
+	type FlareCredentials,
+} from './provider';
+
+// FTSO client exports
+export {
+	getCurrentPrice,
+	getCurrentPrices,
+	getAllCurrentPrices,
+	getSupportedSymbols,
+	getFtsoAddress,
+	getFtsoContract,
+	getPriceEpochData,
+	getCurrentEpochId,
+	getEpochPrice,
+	getPriceDetails,
+	getPriceEpochConfiguration,
+	getVotePowerBlock,
+	getTimeUntilFinalization,
+	isSymbolSupported,
+	getAllFtsoAddresses,
+	formatPrice,
+	calculateUsdValue,
+	type PriceData,
+	type PriceEpochData,
+	type FtsoProviderInfo,
+} from './ftsoClient';
+
+// State connector exports
+export {
+	getStateConnectorInfo,
+	getAttestationRound,
+	getLastFinalizedRound,
+	getMerkleRoot,
+	requestPaymentAttestation,
+	requestBalanceDecreasingAttestation,
+	requestConfirmedBlockHeightAttestation,
+	getAttestationStatus,
+	verifyAttestation,
+	getSupportedAttestationTypes,
+	getAttestationProviders,
+	waitForAttestation,
+	calculateRoundId,
+	getTimeUntilFinalized,
+	type StateConnectorInfo,
+	type AttestationRound,
+	type AttestationStatus,
+	type AttestationType as StateConnectorAttestationType,
+} from './stateConnectorClient';
+
+// Explorer API exports (renamed to avoid conflicts)
+export {
+	createExplorerClient,
+	getTransactionHistory,
+	getTokenTransfers,
+	getNFTTransfers,
+	getTokenBalances,
+	getInternalTransactions,
+	getTransaction as getExplorerTransaction,
+	getContractInfo,
+	getContractABI,
+	getBlock as getExplorerBlock,
+	getBlockCountdown,
+	getNativeBalance as getExplorerNativeBalance,
+	getNativeBalances,
+	type ExplorerCredentials,
+	type TransactionInfo,
+	type TokenTransfer,
+	type TokenBalance,
+	type NFTHolding,
+	type ContractInfo,
+	type InternalTransaction,
+} from './explorerApi';
+
+// FAssets client exports
+export {
+	getFAssetInfo,
+	getFAssetBalance,
+	getAvailableFAssets,
+	getAvailableAgents,
+	estimateMintingCost,
+	estimateRedemptionProceeds,
+	getCollateralRequirements,
+	generatePaymentReference,
+	getFAssetTotalSupply,
+	getCollateralPools,
+	calculateCollateralNeeded,
+	hasCapacity,
+	getUnderlyingNetworkInfo,
+	validateUnderlyingAddress,
+	type FAssetInfo,
+	type AgentInfo,
+	type MintingRequest,
+	type RedemptionRequest,
+	type CollateralPool,
+} from './fAssetsClient';
